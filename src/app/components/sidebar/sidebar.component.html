@@ -1,0 +1,35 @@
+<mat-list>
+  <h3 mat-subheader>{{ "PAGES.SIDEBAR.FOLDERS" | translate }}</h3>
+  <ng-template #recursiveFolders let-list>
+    <ng-container *ngFor="let item of list">
+      <mat-list-item>
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <h4 mat-line>
+          <span>{{ item.name }}</span>
+          <mat-icon (click)="deleteFolder(item)">delete</mat-icon>
+        </h4>
+      </mat-list-item>
+      <mat-list *ngIf="item.subFolders.length || item.notes.length">
+        <ng-container *ngIf="item.notes.length">
+          <ng-container *ngFor="let note of item.notes">
+            <mat-list-item [ngClass]="{'active': note.id === activeNoteId}">
+              <mat-icon mat-list-icon>note</mat-icon>
+              <h4 mat-line>
+                <span (click)="openNote(note)">{{ note.name }}</span>
+                <mat-icon (click)="deleteNote(note)">delete</mat-icon>
+              </h4>
+            </mat-list-item>
+          </ng-container>
+        </ng-container>
+        <ng-container ngIf="item.subFolders.length" *ngTemplateOutlet="recursiveFolders; context:{ $implicit: item.subFolders }"></ng-container>
+      </mat-list>
+    </ng-container>
+  </ng-template>
+
+  <ng-container *ngTemplateOutlet="recursiveFolders; context:{ $implicit: state.files}"></ng-container>
+
+  <mat-divider></mat-divider>
+  <button mat-icon-button (click)="openDialog()">
+    <mat-icon>create_new_folder</mat-icon>
+  </button>
+</mat-list>

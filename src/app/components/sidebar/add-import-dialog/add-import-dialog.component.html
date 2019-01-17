@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>{{ "PAGES.MODAL.ADD_IMPORT.TITLE" | translate }}</h2>
+<div mat-dialog-content>
+  <form name="addFolderForm">
+    <mat-form-field>
+      <input matInput name="name" [(ngModel)]="data.name" maxlength="96" placeholder="{{ 'PAGES.MODAL.ADD_IMPORT.NAME_PLACEHOLDER' | translate }}">
+      <mat-hint align="end">{{data.name.length}} / 96</mat-hint>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="import()">{{ "PAGES.MODAL.ADD_IMPORT.IMPORT" | translate }}</button>
+  <button mat-button (click)="onNoClick()">{{ "PAGES.MODAL.ADD_IMPORT.CANCEL" | translate }}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{ "PAGES.MODAL.ADD_IMPORT.ADD" | translate }}</button>
+</div>

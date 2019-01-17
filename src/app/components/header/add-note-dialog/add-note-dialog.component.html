@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{ "PAGES.MODAL.ADD_NOTE.TITLE" | translate }}</h2>
+<div mat-dialog-content>
+  <form #addNoteForm="ngForm">
+    <mat-form-field>
+      <mat-select name="folder" [(ngModel)]="data.folder" placeholder="{{ 'PAGES.MODAL.ADD_NOTE.FOLDER_SELECTOR_PLACEHOLDER' | translate }}">
+        <mat-option *ngFor="let folder of folders" [value]="folder">
+          {{folder.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input cdkFocusInitial matInput required name="name" [(ngModel)]="data.name" maxlength="96" placeholder="{{ 'PAGES.MODAL.ADD_NOTE.NAME_PLACEHOLDER' | translate }}">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">{{ "PAGES.MODAL.ADD_NOTE.CANCEL" | translate }}</button>
+  <button [disabled]="!addNoteForm.form.valid" mat-button [mat-dialog-close]="data">{{ "PAGES.MODAL.ADD_NOTE.ADD" | translate }}</button>
+</div>

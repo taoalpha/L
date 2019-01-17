@@ -1,0 +1,13 @@
+<!-- layout -->
+<mat-sidenav-container>
+    <!-- sidebar -->
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened">
+        <l-sidebar (sidebar)="toggleSidebar()"></l-sidebar>
+    </mat-sidenav>
+    
+    <!-- content -->
+    <mat-sidenav-content>
+        <l-header (sidebar)="toggleSidebar()"></l-header>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

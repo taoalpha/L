@@ -1,0 +1,32 @@
+{
+  "PAGES": {
+      "SPLASH": {
+          "TITLE": "Welcome to L!"
+      },
+      "SIDEBAR": {
+          "FOLDERS": "Folders"
+      },
+      "HEADER": {
+          "APP_TITLE": "L"
+      },
+      "HOME": {
+          "TITLE": "App works !"
+      },
+      "MODAL": {
+          "ADD_IMPORT": {
+              "TITLE": "Add a folder",
+              "NAME_PLACEHOLDER": "folder name",
+              "IMPORT": "Import",
+              "CANCEL": "Cancel",
+              "ADD": "Add"
+          },
+          "ADD_NOTE": {
+              "TITLE": "Add a note",
+              "FOLDER_SELECTOR_PLACEHOLDER": "Select a folder",
+              "NAME_PLACEHOLDER": "Name of the note",
+              "CANCEL": "Cancel",
+              "ADD": "Add"
+          }
+      }
+  }
+}

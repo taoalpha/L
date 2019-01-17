@@ -1,0 +1,15 @@
+<header>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ "PAGES.HEADER.APP_TITLE" | translate }}</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+
+    <button mat-icon-button (click)="openDialog()">
+      <mat-icon>note_add</mat-icon>
+    </button>
+  </mat-toolbar>
+</header>
